@@ -27,7 +27,7 @@
       
       <button id="searchBtn"
         class="w-full bg-cyan-400 hover:bg-cyan-300 text-black font-semibold px-4 py-3 rounded-b-xl shadow hover:shadow-lg transition">
-        Search
+        <img src="img/search.png" alt="Location Icon" class="w-6 h-6 inline-block" />
       </button>
 
       <div class="flex items-center text-gray-500">
@@ -38,22 +38,21 @@
 
       <button id="locationBtn"
         class="w-full bg-lime-400 hover:bg-lime-300 text-black font-semibold px-4 py-3 rounded-b-xl shadow hover:shadow-lg transition">
-        <!-- <img src="img/location.png" alt="Location Icon" class="items-center w-5 h-5"> -->
-        Your Location
+        <img src="img/location_1.png" alt="Location Icon" class="w-6 h-6 inline-block" />
       </button>
     </section>
 
     <!-- Current Weather -->
-    <section id="currentWeather" class="bg-cyan-600 text-white p-6 rounded-2xl shadow-md md:col-span-2 hidden">
+    <section id="currentWeather" class="bg-lime-500 text-white p-6 rounded-2xl shadow-md md:col-span-2">
       <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
         <div>
           <h3 id="cityDate" class="text-2xl font-bold flex items-center gap-2">
-  <img src="img/mist.png" alt="Location Icon" class="w-6 h-6 inline-block" />
+  <img src="img/location.png" alt="Location Icon" class="w-6 h-6 inline-block" />
   City (Date)
 </h3>
-          <p id="temperature" class="mt-2 text-lg font-bold">Temperature: --</p>
-          <p id="wind"class="mt-2 text-lg font-bold">Wind: --</p>
-          <p id="humidity"class="mt-2 text-lg font-bold">Humidity: --</p>
+          <p id="temperature" class="mt-2 text-lg font-bold"><img src="img/temp.png" alt="Location Icon" class="w-6 h-6 inline-block" /> Temperature: --</p>
+          <p id="wind"class="mt-2 text-lg font-bold"><img src="img/mist.png" alt="Location Icon" class="w-6 h-6 inline-block" /> Wind: --</p>
+          <p id="humidity"class="mt-2 text-lg font-bold"><img src="img/humid.png" alt="Location Icon" class="w-6 h-6 inline-block" /> Humidity: --</p>
         </div>
         <div class="text-center">
           <img id="weatherIcon" src="img/placeholder.png" alt="Weather Icon" class="w-20 h-20 mx-auto animate-bounce">
