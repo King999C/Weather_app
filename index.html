@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="script.js"></script>
 </head>
-<body>
-    
-</div>
+
+<body class="bg-white min-h-screen font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-lime-400 text-white text-center px-2 py-2 text-3xl font-bold shadow-md rounded-b-xl">
+    Weather Dashboard
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 md:px-8 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Search Panel -->
+    <section class="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between gap-4">
+      <h2 class="text-lg text-cyan-600 font-semibold">Enter a City Name</h2>
+      
+      <input type="text" id="cityInput" placeholder="E.g., New York, London, Tokyo"
+        class="w-full px-4 py-3 border border-gray-100 rounded-b-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 transition">
+      
+      <button id="searchBtn"
+        class="w-full bg-cyan-400 hover:bg-cyan-300 text-black font-semibold px-4 py-3 rounded-b-xl shadow hover:shadow-lg transition">
+        Search
+      </button>
+
+      <div class="flex items-center text-gray-500">
+        <hr class="flex-grow border-amber-400" />
+        <span class="px-2 text-sm">or</span>
+        <hr class="flex-grow border-amber-400" />
+      </div>
+
+      <button id="locationBtn"
+        class="w-full bg-lime-400 hover:bg-lime-300 text-black font-semibold px-4 py-3 rounded-b-xl shadow hover:shadow-lg transition">
+        <!-- <img src="img/location.png" alt="Location Icon" class="items-center w-5 h-5"> -->
+        Your Location
+      </button>
+    </section>
+
+    <!-- Current Weather -->
+    <section id="currentWeather" class="bg-cyan-600 text-white p-6 rounded-2xl shadow-md md:col-span-2 hidden">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
+        <div>
+          <h3 id="cityDate" class="text-2xl font-bold flex items-center gap-2">
+  <img src="img/mist.png" alt="Location Icon" class="w-6 h-6 inline-block" />
+  City (Date)
+</h3>
+          <p id="temperature" class="mt-2 text-lg font-bold">Temperature: --</p>
+          <p id="wind"class="mt-2 text-lg font-bold">Wind: --</p>
+          <p id="humidity"class="mt-2 text-lg font-bold">Humidity: --</p>
+        </div>
+        <div class="text-center">
+          <img id="weatherIcon" src="img/placeholder.png" alt="Weather Icon" class="w-20 h-20 mx-auto animate-bounce">
+          <p id="weatherMain" class="mt-2 text-lg font-medium">--</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Forecast Section -->
+  <section id="forecastSection" class="max-w-7xl mx-auto px-4 md:px-8 pb-10 hidden">
+    <h2 class="text-2xl font-bold mb-8 text-lime-600">5-Day Forecast</h2>
+    <div id="forecastCards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+      <!-- Cards will be injected by JS -->
+    </div>
+  </section>
+
 </body>
 </html>
