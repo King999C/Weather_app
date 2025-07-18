@@ -77,7 +77,7 @@ function renderCurrentWeather(data) {
   const iconMap = {
     Clear: "sun.png",
     Clouds: "cloudy.png",
-    Rain: "rains.png",
+    Rain: "rain.png",
     Snow: "snow.png",
     Mist: "mist.png",
     Haze: "haze.png",
