@@ -10,5 +10,5 @@ A simple and beautiful weather app built using HTML, Tailwind CSS, and JavaScrip
 - Responsive design
 
 ## Author
-- [@King999C](https://github.com/King999C)
+- [@King999C](https://github.com/King999C/Weather_app.git)
 

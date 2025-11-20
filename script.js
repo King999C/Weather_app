@@ -68,10 +68,35 @@ async function fetchWeatherByCoords(lat, lon) {
 
 function renderCurrentWeather(data) {
   currentWeather.classList.remove("hidden");
-  cityDate.textContent = `${data.name} (${new Date().toLocaleDateString()})`;
-  temperature.textContent = `Temperature: ${Math.round(data.main.temp)}°C`;
-  wind.textContent = `Wind: ${Math.round(data.wind.speed)} m/s`;
-  humidity.textContent = `Humidity: ${data.main.humidity}%`;
+  // cityDate.textContent = `${data.name} (${new Date().toLocaleDateString()})`;
+  cityDate.innerHTML = `<img src="img/location.png" class="w-6 h-6 inline-block" />${data.name} (${new Date().toLocaleDateString()})`;
+  // temperature.textContent = `Temperature: ${Math.round(data.main.temp)}°C`;
+   temperature.innerHTML = `
+    <img src="img/temp.png" class="w-6 h-6 inline-block" />
+    Feels Like: ${Math.round(data.main.temp)} °C
+  `;
+  // wind.textContent = `Wind: ${Math.round(data.wind.speed)} m/s`;
+  wind.innerHTML = `
+    <img src="img/wind.png" class="w-6 h-6 inline-block" />
+    Wind: ${Math.round(data.wind.speed)} m/s
+  `;
+  // humidity.textContent = `Humidity: ${data.main.humidity}%`;
+  humidity.innerHTML = `
+    <img src="img/humid.png" class="w-6 h-6 inline-block" />
+    Humidity: ${data.main.humidity} %
+  `;
+  pressure.innerHTML = `
+    <img src="img/pressure.png" class="w-6 h-6 inline-block" />
+    Pressure: ${data.main.pressure} hPa
+  `;
+  gust.innerHTML = `
+    <img src="img/gust.png" class="w-6 h-6 inline-block" />
+    Gust: ${Math.floor(data.wind.gust)} km/h
+  `;
+  degree.innerHTML = `
+    <img src="img/360.png" class="w-6 h-6 inline-block" />
+    Degree: ${Math.round(data.wind.deg)} °D
+  `;
   weatherMain.textContent = data.weather[0].main;
 
   const iconMap = {
@@ -122,7 +147,7 @@ async function fetchForecast(city) {
       };
       card.innerHTML = `
         <h3 class="font-bold mb-2">${date}</h3>
-        <img src="img/${iconMap[icon] || "placeholder.png"}" alt="Icon" class="w-12 h-12 mx-auto">
+        <img src="img/${iconMap[icon] || "placeholder.png"}" alt="Icon" class="w-10 h-10 mx-auto">
         <p class="mt-2">${Math.round(forecast.main.temp)}°C</p>
         <p class="text-sm">${forecast.weather[0].main}</p>
       `;
